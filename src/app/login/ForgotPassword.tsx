@@ -39,7 +39,7 @@ export function ForgotPassword() {
       setIsSubmitted(true);
       console.log('Password reset requested for:', email);
 
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
@@ -73,7 +73,7 @@ export function ForgotPassword() {
       <div className="text-center">
         <h3 className="text-lg font-semibold">Forgot your password?</h3>
         <p className="text-sm text-muted-foreground mt-1">
-          No worries! Enter your email and we'll send you a reset link.
+          No worries! Enter your email and we&apos;ll send you a reset link.
         </p>
       </div>
 

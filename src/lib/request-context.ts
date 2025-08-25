@@ -7,6 +7,7 @@
 
 import { randomUUID } from 'crypto';
 import { logger } from './logger';
+import { User } from '@supabase/supabase-js';
 
 // Define LogContext interface here to avoid circular imports
 export interface LogContext {
@@ -15,14 +16,14 @@ export interface LogContext {
   userRole?: string;
   operation?: string;
   duration?: number;
-  metadata?: Record<string, any>;
-  error?: any;
+  metadata?: Record<string, unknown>;
+  error?: Error | string;
   category?: string;
   method?: string;
   path?: string;
   statusCode?: number;
   table?: string;
-  [key: string]: any; // Allow additional properties
+  [key: string]: unknown; // Allow additional properties
 }
 
 // Store request context in AsyncLocalStorage for the current request
@@ -37,7 +38,7 @@ export interface RequestContext {
   method?: string;
   path?: string;
   startTime: number;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 
 class RequestContextStore {
@@ -89,13 +90,13 @@ class RequestContextStore {
   }
 
   logRequestStart(method: string, path: string): void {
-    const context = this.createLogContext({ operation: `${method} ${path}` });
+    this.createLogContext({ operation: `${method} ${path}` });
     logger.apiRequest(method, path); // This will respect the request logging flag
   }
 
   logRequestEnd(method: string, path: string, statusCode?: number): void {
     const duration = this.getDuration();
-    const context = this.createLogContext({
+    this.createLogContext({
       operation: `${method} ${path}`,
       duration
     });
@@ -152,7 +153,7 @@ export function createRequestContext(
   };
 }
 
-export function extractUserFromSupabaseUser(user: any): { userId?: string; userRole?: string } {
+export function extractUserFromSupabaseUser(user: User | null): { userId?: string; userRole?: string } {
   if (!user) return {};
 
   return {
@@ -162,7 +163,7 @@ export function extractUserFromSupabaseUser(user: any): { userId?: string; userR
 }
 
 // Middleware helper
-export function withRequestContext<T extends any[]>(
+export function withRequestContext<T extends unknown[]>(
   handler: (...args: T) => Promise<Response> | Response,
   request?: Request
 ) {
