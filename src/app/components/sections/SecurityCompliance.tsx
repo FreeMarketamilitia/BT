@@ -1,11 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Container } from "../layout/Container";
 import { SectionTitle } from "../ui/SectionTitle";
-import { IconWrapper } from "../ui/IconWrapper";
-import { Shield, Lock, Eye, FileCheck } from "lucide-react";
 
 const complianceBadges = [
   { name: "FERPA/COPPA aware", color: "bg-green-100 text-green-800" },

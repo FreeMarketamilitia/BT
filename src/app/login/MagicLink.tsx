@@ -39,7 +39,7 @@ export function MagicLink() {
       setIsSubmitted(true);
       console.log('Magic link requested for:', email);
 
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
@@ -73,7 +73,7 @@ export function MagicLink() {
       <div className="text-center">
         <h3 className="text-lg font-semibold">Log in with Magic Link</h3>
         <p className="text-sm text-muted-foreground mt-1">
-          Enter your email and we'll send you a secure link to log in instantly.
+          Enter your email and we&apos;ll send you a secure link to log in instantly.
         </p>
       </div>
 

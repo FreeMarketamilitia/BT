@@ -49,7 +49,7 @@ const getCurrentPeriod = (): PeriodNumber => {
 
 export function QuickScanPass() {
   const [isScanning, setIsScanning] = useState(false);
-  const [scannedStudent, setScannedStudent] = useState<any>(null);
+  const [scannedStudent, setScannedStudent] = useState<{ id: string; name: string; grade: string; avatar: string; } | null>(null);
   const [scanStatus, setScanStatus] = useState<'idle' | 'scanning' | 'success' | 'error'>('idle');
 
   const startScanning = () => {

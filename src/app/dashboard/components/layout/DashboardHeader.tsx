@@ -1,10 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Bell, Menu, Search, Settings, User, LogOut } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import { Notifications } from "./Notifications";
 import { UserMenu } from "./UserMenu";
 

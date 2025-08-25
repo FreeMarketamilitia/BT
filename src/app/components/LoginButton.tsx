@@ -1,20 +1,17 @@
 'use client';
 
 import { LoginModal } from './LoginModal';
-import { LogIn } from 'lucide-react';
 
 interface LoginButtonProps {
   variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive';
   size?: 'default' | 'sm' | 'lg' | 'icon';
   showIcon?: boolean;
-  className?: string;
 }
 
 export function LoginButton({
   variant = 'default',
   size = 'default',
-  showIcon = true,
-  className
+  showIcon = true
 }: LoginButtonProps) {
   return (
     <LoginModal

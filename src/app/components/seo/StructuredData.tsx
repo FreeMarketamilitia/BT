@@ -1,6 +1,6 @@
 interface StructuredDataProps {
   type: "website" | "organization" | "product" | "article";
-  data: any;
+  data: Record<string, unknown>;
 }
 
 export function StructuredData({ type, data }: StructuredDataProps) {

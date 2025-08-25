@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "../layout/Container";
 import { SectionTitle } from "../ui/SectionTitle";
 import { IconWrapper } from "../ui/IconWrapper";
-import { TrendingUp, Users, Eye, Clock } from "lucide-react";
+import { TrendingUp, Eye, Clock } from "lucide-react";
 
 export function AnalyticsShowcase() {
   return (

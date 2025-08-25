@@ -1,6 +1,5 @@
-import { createServerClient } from '@supabase/ssr'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
-import { logger } from '../logger'
 import { requestContext, createRequestContext, generateRequestId, extractUserFromSupabaseUser } from '../request-context'
 
 export async function middleware(request: NextRequest) {
@@ -23,10 +22,17 @@ export async function middleware(request: NextRequest) {
             getAll() {
               return request.cookies.getAll();
             },
-            setAll(cookiesToSet: { name: string; value: string; options?: any }[]) {
-              cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value));
-              supabaseResponse = NextResponse.next({ request });
-              cookiesToSet.forEach(({ name, value, options }) => supabaseResponse.cookies.set(name, value, options));
+            setAll(cookiesToSet: { name: string; value: string; options: CookieOptions }[]) {
+              try {
+                cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
+                supabaseResponse = NextResponse.next({ request });
+                cookiesToSet.forEach(({ name, value, options }) => {
+                  supabaseResponse.cookies.set(name, value, options);
+                });
+              } catch {
+                // The `set` method of `request.cookies` can throw an error on Next.js older versions.
+                // If that happens, we ignore the error and fall back to the old way of setting cookies.
+              }
             },
           },
         }

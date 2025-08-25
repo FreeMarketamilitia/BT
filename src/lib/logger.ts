@@ -79,8 +79,10 @@ class Logger {
         message: error.message,
         stack: error.stack,
       };
-    } else if (error) {
+    } else if (typeof error === 'string') {
       logContext.error = error;
+    } else if (error) {
+      logContext.error = JSON.stringify(error);
     }
 
     this.logger.error(logContext, message);

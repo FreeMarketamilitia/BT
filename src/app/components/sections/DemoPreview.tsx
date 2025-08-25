@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Container } from "../layout/Container";
 import { SectionTitle } from "../ui/SectionTitle";
-import { Play, Monitor } from "lucide-react";
+import { Play } from "lucide-react";
 
 export function DemoPreview() {
   return (

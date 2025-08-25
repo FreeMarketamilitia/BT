@@ -12,7 +12,7 @@ export function ProblemSolution() {
           {/* Problem Section */}
           <div className="text-center space-y-8">
             <SectionTitle
-              title="Paper Passes Don't Scale. Accountability Does."
+              title="Paper Passes Don&apos;t Scale. Accountability Does."
             />
 
             {/* Problem Cards */}
@@ -42,7 +42,7 @@ export function ProblemSolution() {
                   <div className="text-2xl mb-4">📊</div>
                   <h3 className="font-semibold mb-2">No data to shape policy</h3>
                   <p className="text-sm text-muted-foreground">
-                    Can't identify patterns or make informed decisions about hall traffic
+                    Can&apos;t identify patterns or make informed decisions about hall traffic
                   </p>
                 </CardContent>
               </Card>
@@ -77,7 +77,7 @@ export function ProblemSolution() {
                   <div className="text-2xl mb-4">👀</div>
                   <h3 className="font-semibold mb-2">Real-time monitoring and alerts</h3>
                   <p className="text-sm text-muted-foreground">
-                    Live dashboard showing where every student is and when they'll be back
+                    Live dashboard showing where every student is and when they&apos;ll be back
                   </p>
                 </CardContent>
               </Card>

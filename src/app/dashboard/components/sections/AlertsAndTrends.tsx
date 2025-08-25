@@ -95,7 +95,7 @@ export function AlertsAndTrends() {
         <div className="space-y-3">
           <h4 className="font-medium flex items-center space-x-2">
             <TrendingUp className="h-4 w-4" />
-            <span>Today's Trends</span>
+            <span>Today&apos;s Trends</span>
           </h4>
           <div className="space-y-3">
             {trends.map((trend, index) => (

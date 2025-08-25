@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Clock, MapPin, User, AlertCircle, Search } from "lucide-react";
+import { Clock, MapPin, AlertCircle, Search } from "lucide-react";
 import { useState } from "react";
 
 // Mock school-wide pass data

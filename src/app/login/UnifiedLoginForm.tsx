@@ -70,7 +70,7 @@ export function UnifiedLoginForm() {
         // Redirect will be handled by middleware based on user role
         router.push('/dashboard');
       }
-    } catch (err) {
+    } catch {
       setSignInError('An error occurred. Please try again.');
     } finally {
       setIsSignInLoading(false);
@@ -106,7 +106,7 @@ export function UnifiedLoginForm() {
         setMagicSuccess('Magic link sent! Check your email to log in instantly.');
         setMagicSubmitted(true);
       }
-    } catch (err) {
+    } catch {
       setMagicError('An error occurred. Please try again.');
     } finally {
       setIsMagicLoading(false);

@@ -40,7 +40,7 @@ export function LoginForm() {
       setSuccess('Login successful! Redirecting...');
       console.log('Login attempt:', { email, password, rememberMe });
 
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
