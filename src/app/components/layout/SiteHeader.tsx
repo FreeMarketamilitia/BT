@@ -5,6 +5,7 @@ import { ThemeModeToggler } from "@/components/theme-mode-toggler";
 import { ThemeColorToggler } from "@/components/theme-color-toggler";
 import { ThemeRadiusToggler } from "@/components/theme-radius-toggler";
 import { LoginButton } from "@/app/components/LoginButton";
+import { MobileNav } from "./MobileNav";
 
 export function SiteHeader() {
   return (
@@ -19,41 +20,45 @@ export function SiteHeader() {
             <span className="font-bold text-xl">Hallpass</span>
           </Link>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="#features" className="text-sm font-medium hover:text-primary transition-colors">
-              Features
-            </Link>
-            <Link href="#analytics" className="text-sm font-medium hover:text-primary transition-colors">
-              Analytics
-            </Link>
-            <Link href="#security" className="text-sm font-medium hover:text-primary transition-colors">
-              Security
-            </Link>
-            <Link href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
-              Pricing
-            </Link>
-            <Link href="#faq" className="text-sm font-medium hover:text-primary transition-colors">
-              FAQ
-            </Link>
-            <Link href="/docs" className="text-sm font-medium hover:text-primary transition-colors">
-              Docs
-            </Link>
-          </nav>
+          <div className="flex flex-1 items-center justify-end space-x-4">
+            {/* Navigation */}
+            <nav className="hidden md:flex items-center space-x-6">
+              <Link href="#features" className="text-sm font-medium hover:text-primary transition-colors">
+                Features
+              </Link>
+              <Link href="#analytics" className="text-sm font-medium hover:text-primary transition-colors">
+                Analytics
+              </Link>
+              <Link href="#security" className="text-sm font-medium hover:text-primary transition-colors">
+                Security
+              </Link>
+              <Link href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
+                Pricing
+              </Link>
+              <Link href="#faq" className="text-sm font-medium hover:text-primary transition-colors">
+                FAQ
+              </Link>
+              <Link href="/docs" className="text-sm font-medium hover:text-primary transition-colors">
+                Docs
+              </Link>
+            </nav>
 
-          {/* Actions */}
-          <div className="flex items-center space-x-4">
-            {/* Theme Controls */}
-            <div className="hidden md:flex items-center space-x-2">
-              <ThemeColorToggler />
-              <ThemeRadiusToggler />
+            {/* Actions */}
+            <div className="flex items-center space-x-4">
+              {/* Theme Controls */}
+              <div className="hidden md:flex items-center space-x-2">
+                <ThemeColorToggler />
+                <ThemeRadiusToggler />
+              </div>
+              <ThemeModeToggler />
+
+              <LoginButton variant="ghost" size="sm" />
+              <Button size="sm" asChild>
+                <Link href="/demo">Book a demo</Link>
+              </Button>
             </div>
-            <ThemeModeToggler />
 
-            <LoginButton variant="ghost" size="sm" />
-            <Button size="sm" asChild>
-              <Link href="/demo">Book a demo</Link>
-            </Button>
+            <MobileNav />
           </div>
         </div>
       </Container>
