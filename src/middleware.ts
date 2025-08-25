@@ -1,6 +1,6 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
-import { requestContext, createRequestContext, generateRequestId, extractUserFromSupabaseUser } from '../request-context'
+import { requestContext, createRequestContext, generateRequestId, extractUserFromSupabaseUser } from './lib/request-context'
 
 export async function middleware(request: NextRequest) {
   const requestId = generateRequestId();
