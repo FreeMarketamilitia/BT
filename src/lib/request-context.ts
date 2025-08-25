@@ -5,7 +5,6 @@
  * across middleware, API routes, and server components.
  */
 
-import { randomUUID } from 'crypto';
 import { logger } from './logger';
 import { User } from '@supabase/supabase-js';
 
@@ -131,7 +130,7 @@ export const requestContext = new RequestContextStore();
 
 // Utility functions
 export function generateRequestId(): string {
-  return randomUUID();
+  return crypto.randomUUID();
 }
 
 export function createRequestContext(
